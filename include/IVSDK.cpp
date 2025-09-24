@@ -61,11 +61,16 @@ namespace plugin
 			gameStartupEvent();
 		}
 	}
+	void Deinit()
+	{
+		gameShutdownEvent();
+	}
 }
 
 BOOL APIENTRY DllMain(HMODULE module, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
 	if (ul_reason_for_call == DLL_PROCESS_ATTACH) plugin::Init();
+	if (ul_reason_for_call == DLL_PROCESS_DETACH) plugin::Deinit();
 	return TRUE;
 }
 

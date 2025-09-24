@@ -12,6 +12,7 @@ namespace plugin
 	};
 	eGameVersion gameVer = VERSION_NONE;
 	void gameStartupEvent();
+	void gameShutdownEvent();
 }
 
 #include "NewAddressSet.h"

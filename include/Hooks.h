@@ -194,9 +194,16 @@ namespace plugin
 
 		void Run()
 		{
-			for (auto& f : funcPtrs)
+			try
 			{
-				f();
+				for (auto& f : funcPtrs)
+				{
+					f();
+				}
+
+			}
+			catch (std::exception* e)
+			{
 			}
 		}
 		void __declspec(naked) MainHook()

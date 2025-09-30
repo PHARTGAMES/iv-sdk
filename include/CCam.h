@@ -69,6 +69,18 @@ public:
 	{
 		return ((bool(__thiscall*)(CCam*))(*(void***)this)[4])(this);
 	}
+	void CopyFrom(CCam* cam)
+	{
+		if (cam == nullptr)
+			return;
+
+		m_mMatrix = cam->m_mMatrix;
+		m_fFOV = cam->m_fFOV;
+		m_fNearZ = cam->m_fNearZ;
+		m_fFarZ = cam->m_fFarZ;
+		m_fNearDOF = cam->m_fNearDOF;
+		m_fFarDOF = cam->m_fFarDOF;
+	}
 };
 VALIDATE_SIZE(CCam, 0x140); // probably?
 VALIDATE_OFFSET(CCam, m_mMatrix, 0x10);

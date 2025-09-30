@@ -80,6 +80,7 @@ inline CMatrix InverseMatrix(const CMatrix& m)
 }
 
 inline float DegToRad(float deg) { return deg * 3.14159265358979323846f / 180.0f; }
+inline float RadToDeg(float rad) { return rad * 180.0f / 3.14159265358979323846f; }
 
 inline CMatrix BuildMatrixFromAngles(const CVector& anglesDeg)
 {
@@ -147,6 +148,55 @@ inline CMatrix BuildCameraOffset(float yawDeg, float pitchDeg)
     m.up = ToPadded(Normalize(Cross(m.right, m.at)));
 
     m.pos = ToPadded(CVector(0,0,0));
+
+    return m;
+}
+
+
+inline CMatrix BuildRotationFromAxisAngle(const CVector& axis, float angleDeg)
+{
+    float angle = DegToRad(angleDeg);
+    float c = cosf(angle);
+    float s = sinf(angle);
+    float t = 1.0f - c;
+
+    // Normalize axis
+    CVector u = axis;
+    float mag = sqrtf(u.x * u.x + u.y * u.y + u.z * u.z);
+    if (mag > 1e-6f)
+    {
+        u.x /= mag;
+        u.y /= mag;
+        u.z /= mag;
+    }
+
+    float x = u.x, y = u.y, z = u.z;
+
+    CMatrix m;
+
+    // Right (X basis)
+    m.right = ToPadded(CVector(
+        t * x * x + c,
+        t * x * y + s * z,
+        t * x * z - s * y
+    ));
+
+    // At (Y basis, forward)
+    m.at = ToPadded(CVector(
+        t * x * y - s * z,
+        t * y * y + c,
+        t * y * z + s * x
+    ));
+
+    // Up (Z basis)
+    m.up = ToPadded(CVector(
+        t * x * z + s * y,
+        t * y * z - s * x,
+        t * z * z + c
+    ));
+
+    // Position
+    m.pos = ToPadded(CVector(0, 0, 0));
 
     return m;
 }

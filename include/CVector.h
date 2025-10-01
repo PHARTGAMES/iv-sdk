@@ -149,3 +149,12 @@ inline CVector ToVector(const CVector_pad& vecPad)
 {
     return CVector(vecPad.x, vecPad.y, vecPad.z);
 }
+
+inline CVector Lerp(const CVector& a, const CVector& b, float t)
+{
+    return CVector(
+        a.x + (b.x - a.x) * t,
+        a.y + (b.y - a.y) * t,
+        a.z + (b.z - a.z) * t
+    );
+}

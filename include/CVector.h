@@ -158,3 +158,25 @@ inline CVector Lerp(const CVector& a, const CVector& b, float t)
         a.z + (b.z - a.z) * t
     );
 }
+
+inline float SignedAngle(const CVector& a, const CVector& b, const CVector& axis)
+{
+    // Normalize inputs
+    CVector an = a.Normalized();
+    CVector bn = b.Normalized();
+
+    // Dot gives cosine of angle
+    float dot = an.Dot(bn);
+    dot = std::fmax(-1.0f, std::fmin(1.0f, dot)); // clamp for safety
+
+    float angle = acosf(dot);
+
+    // Cross gives direction
+    CVector cross = an.Cross(bn);
+
+    // If cross points opposite to axis, flip the sign
+    if (cross.Dot(axis) < 0.0f)
+        angle = -angle;
+
+    return angle; // radians
+}

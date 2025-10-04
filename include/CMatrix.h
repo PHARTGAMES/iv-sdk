@@ -82,44 +82,6 @@ inline CMatrix InverseMatrix(const CMatrix& m)
 inline float DegToRad(float deg) { return deg * 3.14159265358979323846f / 180.0f; }
 inline float RadToDeg(float rad) { return rad * 180.0f / 3.14159265358979323846f; }
 
-inline CMatrix BuildMatrixFromAngles(const CVector& anglesDeg)
-{
-    // Angles in degrees: angles.x = pitch, angles.y = yaw, angles.z = roll
-    float pitch = DegToRad(anglesDeg.x); // around Y (forward)
-    float yaw = DegToRad(anglesDeg.y); // around Z (up)
-    float roll = DegToRad(anglesDeg.z); // around X (right)
-
-    // Precompute sines/cosines
-    float sp = sinf(pitch), cp = cosf(pitch);
-    float sy = sinf(yaw), cy = cosf(yaw);
-    float sr = sinf(roll), cr = cosf(roll);
-
-    CMatrix m;
-
-    // Rotation matrix (right, at, up)
-    m.right = ToPadded(CVector(
-        cy * cr + sy * sp * sr,
-        sy * cp,
-        cy * -sr + sy * sp * cr
-    ));
-
-    m.at = ToPadded(CVector(
-        -sy * cr + cy * sp * sr,
-        cy * cp,
-        sy * sr + cy * sp * cr
-    ));
-
-    m.up = ToPadded(CVector(
-        cp * sr,
-        -sp,
-        cp * cr
-    ));
-
-    // Position = origin
-    m.pos = ToPadded(CVector(0.0f, 0.0f, 0.0f));
-
-    return m;
-}
 
 
 inline CMatrix BuildCameraOffset(float yawDeg, float pitchDeg)
@@ -199,4 +161,119 @@ inline CMatrix BuildRotationFromAxisAngle(const CVector& axis, float angleDeg)
     m.pos = ToPadded(CVector(0, 0, 0));
 
     return m;
+}
+
+inline CMatrix BuildMatrixFromAngles(const CVector& anglesDeg)
+{
+    // GTA IV convention: x = pitch, y = roll, z = yaw
+    float pitch = DegToRad(anglesDeg.x); // around right (X)
+    float roll = DegToRad(anglesDeg.y); // around at (Y)
+    float yaw = DegToRad(anglesDeg.z); // around up (Z)
+
+    float sp = sinf(pitch), cp = cosf(pitch);
+    float sr = sinf(roll), cr = cosf(roll);
+    float sy = sinf(yaw), cy = cosf(yaw);
+
+    CMatrix m;
+
+    // Basis vectors in GTA IV layout (right, at, up)
+    m.right = ToPadded(CVector(
+        cp * cy,
+        cp * sy,
+        sp
+    ));
+
+    m.at = ToPadded(CVector(
+        sr * sp * cy - cr * sy,
+        sr * sp * sy + cr * cy,
+        -sr * cp
+    ));
+
+    m.up = ToPadded(CVector(
+        -(cr * sp * cy + sr * sy),
+        -(cr * sp * sy - sr * cy),
+        cr * cp
+    ));
+
+    m.pos = ToPadded(CVector(0, 0, 0));
+
+    return m;
+}
+
+inline CVector ExtractEulerAngles(const CMatrix& m)
+{
+    CVector angles; // x=pitch, y=roll, z=yaw
+
+    const CVector& at = m.at;    // forward
+    const CVector& right = m.right; // right
+    const CVector& up = m.up;    // up
+
+    // Pitch: nose up/down from forward Z
+    float pitch = asinf(at.z);
+
+    // Yaw: heading from forward XY projection
+    CVector atXY = CVector(at.x, at.y, 0.0f).Normalized();
+    float yaw = -atan2f(atXY.x, atXY.y);
+
+    // Roll: bank from right & up tilt
+    float roll = atan2f(-right.z, up.z);
+
+    // Convert to degrees
+    const float rad2deg = 180.0f / 3.14159265358979323846f;
+    angles.x = pitch * rad2deg;
+    angles.y = roll * rad2deg;
+    angles.z = yaw * rad2deg;
+
+    return angles;
+}
+
+
+inline CQuaternion MatrixToQuaternion(const CMatrix& m)
+{
+    CQuaternion q;
+
+    // GTA IV convention: right=X, at=Y, up=Z
+    float R00 = m.right.x, R01 = m.at.x, R02 = m.up.x;
+    float R10 = m.right.y, R11 = m.at.y, R12 = m.up.y;
+    float R20 = m.right.z, R21 = m.at.z, R22 = m.up.z;
+
+    float trace = R00 + R11 + R22;
+
+    if (trace > 0.0f)
+    {
+        float s = 0.5f / sqrtf(trace + 1.0f);
+        q.w = 0.25f / s;
+        q.x = (R21 - R12) * s;
+        q.y = (R02 - R20) * s;
+        q.z = (R10 - R01) * s;
+    }
+    else
+    {
+        if (R00 > R11 && R00 > R22)
+        {
+            float s = 2.0f * sqrtf(1.0f + R00 - R11 - R22);
+            q.w = (R21 - R12) / s;
+            q.x = 0.25f * s;
+            q.y = (R01 + R10) / s;
+            q.z = (R02 + R20) / s;
+        }
+        else if (R11 > R22)
+        {
+            float s = 2.0f * sqrtf(1.0f + R11 - R00 - R22);
+            q.w = (R02 - R20) / s;
+            q.x = (R01 + R10) / s;
+            q.y = 0.25f * s;
+            q.z = (R12 + R21) / s;
+        }
+        else
+        {
+            float s = 2.0f * sqrtf(1.0f + R22 - R00 - R11);
+            q.w = (R10 - R01) / s;
+            q.x = (R02 + R20) / s;
+            q.y = (R12 + R21) / s;
+            q.z = 0.25f * s;
+        }
+    }
+
+    return q;
 }

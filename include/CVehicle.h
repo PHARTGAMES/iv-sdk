@@ -102,14 +102,14 @@ public:
 	uint32_t _ffc;						// 0FC-100 0xcdcdcdcd
 	float _f100;						// 100-104
 	float _f104;						// 104-108
-	float _f108;						// 108-10C has to do with suspension. 0 if the wheel is in the air
+	float m_suspensionPos;						// 108-10C has to do with suspension. 0 if the wheel is in the air
 	float _f10c;						// 10C-110 has to do with suspension. 0 if the wheel is in the air
-	float _f110;						// 110-114 has to do with suspension. 0 if the wheel is in the air
-	float _f114;						// 114-118
-	float _f118;						// 118-11C
+	float _f110;						// 110-114 has to do with suspension. 0 if the wheel is in the air 
+	float _f114;						// 114-118 //pretty sure wheel rotation velocity (around wheel local right)
+	float _f118;						// 118-11C //seems like wheel rotation velocity also 
 	float _f11c;						// 11C-120 always -1
-	float _f120;						// 120-124
-	float _f124;						// 124-128
+	float _f120;						// 120-124 //seems like suspension acceleration
+	float _f124;						// 124-128 //worldspace x acceleration?
 	uint8_t _f128[0x8];					// 128-130
 	float m_fTrackIntensity;			// 130-134
 	float _f134;						// 134-138 brake mult?

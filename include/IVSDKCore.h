@@ -6,9 +6,9 @@
 #include <string>
 #include <list>
 #include <exception>
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
+//#ifndef NOMINMAX
+//#define NOMINMAX
+//#endif
 #include <windows.h>
 #include <d3d9.h>
 

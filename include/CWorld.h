@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CWORLD_H
+#define IVSDK_HEADER_CWORLD_H
 class CEntity;
 class phInstGta;
 
@@ -72,3 +77,4 @@ public:
 		return ((uint32_t(__cdecl*)(CVector*, CVector*, uint32_t*, tLineOfSightResults*, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t))(AddressSetter::Get(0x596D80, 0x52A400)))(source, target, pUnk, pResults, nFlags, nUnk1, nUnk2, nSeeThroughShootThrough, nUnk4);
 	}
 };
+#endif // IVSDK_HEADER_CWORLD_H

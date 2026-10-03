@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CCUTSCENEMGR_H
+#define IVSDK_HEADER_CCUTSCENEMGR_H
 class CCutsceneMgr
 {
 public:
@@ -8,3 +13,4 @@ public:
 		return ((bool(__cdecl*)())(AddressSetter::Get(0x45F210, 0x3F02B0)))();
 	}
 };
+#endif // IVSDK_HEADER_CCUTSCENEMGR_H

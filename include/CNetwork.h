@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CNETWORK_H
+#define IVSDK_HEADER_CNETWORK_H
 class CNetwork
 {
 public:
@@ -19,3 +24,4 @@ public:
 		((void(__cdecl*)(bool, int))(AddressSetter::Get(0x60310, 0x2BEDD0)))(bUnk, time);
 	}
 };
+#endif // IVSDK_HEADER_CNETWORK_H

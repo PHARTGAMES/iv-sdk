@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTEXT_H
+#define IVSDK_HEADER_CTEXT_H
 class CText
 {
 public:
@@ -6,4 +11,5 @@ public:
 		return ((const wchar_t*(__thiscall*)(CText*, const char*))(AddressSetter::Get(0x3B54C0, 0x4A4000)))(this, Ident);
 	}
 };
-auto& TheText = AddressSetter::GetRef<CText>(0xCF4CE8, 0xDFB4C8);
+extern CText& TheText;
+#endif // IVSDK_HEADER_CTEXT_H

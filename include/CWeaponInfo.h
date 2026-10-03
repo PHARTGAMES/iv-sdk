@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CWEAPONINFO_H
+#define IVSDK_HEADER_CWEAPONINFO_H
 class CWeaponInfo
 {
 public:
@@ -113,4 +118,5 @@ public:
 };
 VALIDATE_SIZE(CWeaponInfo, 0x110);
 
-CWeaponInfo* aWeaponInfo = (CWeaponInfo*)AddressSetter::Get(0x1140A20, 0xE4A600); // aWeaponInfo[60]
+extern CWeaponInfo* aWeaponInfo; // aWeaponInfo[60]
+#endif // IVSDK_HEADER_CWEAPONINFO_H

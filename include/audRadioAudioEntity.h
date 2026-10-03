@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_AUDRADIOAUDIOENTITY_H
+#define IVSDK_HEADER_AUDRADIOAUDIOENTITY_H
 class audRadioAudioEntity
 {
 public:
@@ -6,4 +11,5 @@ public:
 };
 VALIDATE_OFFSET(audRadioAudioEntity, m_nCurrentRadioStation, 0x78);
 
-audRadioAudioEntity& RadioAudioEntity = AddressSetter::GetRef<audRadioAudioEntity>(0xDA3700, 0xD71F48);
+extern audRadioAudioEntity& RadioAudioEntity;
+#endif // IVSDK_HEADER_AUDRADIOAUDIOENTITY_H

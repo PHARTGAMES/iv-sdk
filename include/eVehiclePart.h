@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_EVEHICLEPART_H
+#define IVSDK_HEADER_EVEHICLEPART_H
 enum eVehiclePart
 {
 	PART_CHASSIS,
@@ -152,3 +157,4 @@ enum eVehiclePart
 	PART_PLANE_AILERON_L,
 	PART_PLANE_AILERON_R,
 };
+#endif // IVSDK_HEADER_EVEHICLEPART_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_SKYDOME_H
+#define IVSDK_HEADER_SKYDOME_H
 namespace rage
 {
 	class SkyhatMiniNoise
@@ -43,4 +48,5 @@ namespace rage
 	VALIDATE_OFFSET(SkyDome, m_nDrawStencil, 0x30C);
 	VALIDATE_OFFSET(SkyDome, m_nDrawSunOnly, 0x310);
 }
-rage::SkyDome*& TheSkyDome = AddressSetter::GetRef<rage::SkyDome*>(0x130B040, 0x13366A8);
+extern rage::SkyDome*& TheSkyDome;
+#endif // IVSDK_HEADER_SKYDOME_H

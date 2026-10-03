@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CVECTOR_H
+#define IVSDK_HEADER_CVECTOR_H
 class CVector
 {
 public:
@@ -180,3 +185,4 @@ inline float SignedAngle(const CVector& a, const CVector& b, const CVector& axis
 
     return angle; // radians
 }
+#endif // IVSDK_HEADER_CVECTOR_H

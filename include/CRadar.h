@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CRADAR_H
+#define IVSDK_HEADER_CRADAR_H
 #include "eRadarSprite.h"
 
 class CSprite2d;
@@ -105,4 +110,5 @@ public:
 	}
 };
 
-auto RadarBlipSpriteFilenames = (const char**)AddressSetter::Get(0xC844F8, 0xC91690); // RadarBlipSpriteFilenames[130]
+extern const char** RadarBlipSpriteFilenames; // RadarBlipSpriteFilenames[130]
+#endif // IVSDK_HEADER_CRADAR_H

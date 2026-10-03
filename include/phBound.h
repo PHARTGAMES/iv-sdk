@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_PHBOUND_H
+#define IVSDK_HEADER_PHBOUND_H
 namespace rage
 {
 	class phBound
@@ -16,3 +21,4 @@ namespace rage
 	};
 	VALIDATE_SIZE(phBoundComposite, 0xA0);
 };
+#endif // IVSDK_HEADER_PHBOUND_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CGENERICGAMESTORAGE_H
+#define IVSDK_HEADER_CGENERICGAMESTORAGE_H
 class CGenericGameStorage
 {
 public:
@@ -21,3 +26,4 @@ public:
 		return ((bool(__cdecl*)(void*, int32_t))(AddressSetter::Get(0x42DEB0, 0x459370)))(pData, SizeOfData);
 	}
 };
+#endif // IVSDK_HEADER_CGENERICGAMESTORAGE_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_PGDICTIONARY_H
+#define IVSDK_HEADER_PGDICTIONARY_H
 namespace rage
 {
 	template<typename T>
@@ -10,3 +15,4 @@ namespace rage
 		}
 	};
 }
+#endif // IVSDK_HEADER_PGDICTIONARY_H

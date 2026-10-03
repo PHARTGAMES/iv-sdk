@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CGARAGE_H
+#define IVSDK_HEADER_CGARAGE_H
 class CStoredCar
 {
 public:
@@ -201,3 +206,4 @@ public:
 		((void(__cdecl*)())(AddressSetter::Get(0x502200, 0x5687E0)))();
 	}
 };
+#endif // IVSDK_HEADER_CGARAGE_H

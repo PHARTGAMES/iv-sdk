@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPEDFACTORYNY_H
+#define IVSDK_HEADER_CPEDFACTORYNY_H
 class CPedFactory
 {
 
@@ -20,4 +25,5 @@ public:
 	}
 };
 
-CPedFactoryNY*& PedFactory = AddressSetter::GetRef<CPedFactoryNY*>(0x11E35A0, 0xE52DE0);
+extern CPedFactoryNY*& PedFactory;
+#endif // IVSDK_HEADER_CPEDFACTORYNY_H

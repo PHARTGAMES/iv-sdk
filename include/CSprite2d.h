@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CSPRITE2D_H
+#define IVSDK_HEADER_CSPRITE2D_H
 class CSprite2d
 {
 public:
@@ -13,3 +18,4 @@ public:
 	}
 };
 VALIDATE_SIZE(CSprite2d, 0x4);
+#endif // IVSDK_HEADER_CSPRITE2D_H

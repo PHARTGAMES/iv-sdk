@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTASKCOMPLEXPLAYERSETTINGSTASK_H
+#define IVSDK_HEADER_CTASKCOMPLEXPLAYERSETTINGSTASK_H
 class CTaskComplexPlayerSettingsTask : public CTaskComplex
 {
 public:
@@ -20,3 +25,4 @@ VALIDATE_OFFSET(CTaskComplexPlayerSettingsTask, m_nUnk0, 0x14);
 VALIDATE_OFFSET(CTaskComplexPlayerSettingsTask, m_nUnkNeg1, 0x18);
 VALIDATE_OFFSET(CTaskComplexPlayerSettingsTask, m_nUnkNeg1_2, 0x1C);
 VALIDATE_OFFSET(CTaskComplexPlayerSettingsTask, m_nUnkFromPed, 0x20);
+#endif // IVSDK_HEADER_CTASKCOMPLEXPLAYERSETTINGSTASK_H

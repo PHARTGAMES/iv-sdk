@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPOPULATION_H
+#define IVSDK_HEADER_CPOPULATION_H
 class CPopulation
 {
 public:
@@ -18,3 +23,4 @@ public:
 		return ((void(__cdecl*)(CPed*, bool))(AddressSetter::Get(0x5F8D40, 0x531580)))(pPed, unk);
 	}
 };
+#endif // IVSDK_HEADER_CPOPULATION_H

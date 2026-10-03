@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CDRAWSPRITEUVDC_H
+#define IVSDK_HEADER_CDRAWSPRITEUVDC_H
 class CDrawSpriteUVDC : public CBaseDC
 {
 public:
@@ -15,3 +20,4 @@ public:
 	}
 };
 VALIDATE_SIZE(CDrawSpriteUVDC, 0x50);
+#endif // IVSDK_HEADER_CDRAWSPRITEUVDC_H

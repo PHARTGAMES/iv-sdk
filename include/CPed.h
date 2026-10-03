@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPED_H
+#define IVSDK_HEADER_CPED_H
 class CPhysical;
 class CPedIntelligenceNY;
 class CPlayerInfo;
@@ -206,3 +211,4 @@ VALIDATE_OFFSET(CPed, m_nVoiceHash, 0x61C);
 VALIDATE_OFFSET(CPed, m_pStandingOnEntity, 0x484);
 VALIDATE_OFFSET(CPed, m_pWeaponData, 0x2B0);
 VALIDATE_OFFSET(CPed, m_nUnkPlayerSettingsRelated, 0xE80);
+#endif // IVSDK_HEADER_CPED_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CDRAWCURVEDWINDOWDC_H
+#define IVSDK_HEADER_CDRAWCURVEDWINDOWDC_H
 class CDrawCurvedWindowDC : public CBaseDC
 {
 public:
@@ -10,3 +15,4 @@ public:
 	}
 };
 VALIDATE_SIZE(CDrawCurvedWindowDC, 0x1C);
+#endif // IVSDK_HEADER_CDRAWCURVEDWINDOWDC_H

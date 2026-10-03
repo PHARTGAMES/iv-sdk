@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CCLOCK_H
+#define IVSDK_HEADER_CCLOCK_H
 class CClock
 {
 public:
@@ -11,3 +16,4 @@ public:
 	static inline uint32_t& ms_nGameClockMonth = AddressSetter::GetRef<uint32_t>(0xDD52F8, 0xD5168C);
 	static inline uint32_t& ms_nMillisecondsPerGameMinute = AddressSetter::GetRef<uint32_t>(0xDD5304, 0xD51698);
 };
+#endif // IVSDK_HEADER_CCLOCK_H

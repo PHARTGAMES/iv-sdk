@@ -1,4 +1,6 @@
 #pragma once
+#include "../IVSDK.h"
+#pragma once
 
 // all natives have been changed to use their actual names
 // this header is a frankenstein of scripthook, sc-cl and scocl headers with original stuff sprinkled in

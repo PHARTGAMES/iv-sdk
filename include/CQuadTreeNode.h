@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CQUADTREENODE_H
+#define IVSDK_HEADER_CQUADTREENODE_H
 class CQuadTreeNode
 {
 public:
@@ -16,3 +21,4 @@ public:
 	}
 };
 VALIDATE_SIZE(CQuadTreeNode, 0x28);
+#endif // IVSDK_HEADER_CQUADTREENODE_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTASK_H
+#define IVSDK_HEADER_CTASK_H
 class CTask
 {
 public:
@@ -19,3 +24,4 @@ class CTaskSimple : public CTask
 public:
 
 };
+#endif // IVSDK_HEADER_CTASK_H

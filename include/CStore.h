@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CSTORE_H
+#define IVSDK_HEADER_CSTORE_H
 template<typename T>
 class CStore
 {
@@ -7,5 +12,6 @@ public:
 	T* m_storeArray;					// 08-0C
 };
 
-auto& ms_vehicleModelStore = AddressSetter::GetRef<CStore<CVehicleModelInfo>>(0xB2C14C, 0xB3E8E8);
-auto& ms_pedModelStore = AddressSetter::GetRef<CStore<CPedModelInfo>>(0xB2C158, 0xB3E8F4);
+extern CStore<CVehicleModelInfo>& ms_vehicleModelStore;
+extern CStore<CPedModelInfo>& ms_pedModelStore;
+#endif // IVSDK_HEADER_CSTORE_H

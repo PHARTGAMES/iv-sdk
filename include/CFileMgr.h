@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CFILEMGR_H
+#define IVSDK_HEADER_CFILEMGR_H
 class CFileMgr
 {
 public:
@@ -15,3 +20,4 @@ public:
 		return ((char*(__cdecl*)(uint8_t*, int))(AddressSetter::Get(0x3B2960, 0x456760)))(file, unk);
 	}
 };
+#endif // IVSDK_HEADER_CFILEMGR_H

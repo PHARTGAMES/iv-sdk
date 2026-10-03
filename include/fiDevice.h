@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_FIDEVICE_H
+#define IVSDK_HEADER_FIDEVICE_H
 namespace rage
 {
 	class fiDeviceLocal
@@ -32,3 +37,4 @@ namespace rage
 	};
 	VALIDATE_SIZE(fiDevice, 0x210);
 };
+#endif // IVSDK_HEADER_FIDEVICE_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CSIMPLETRANSFORM_H
+#define IVSDK_HEADER_CSIMPLETRANSFORM_H
 class CSimpleTransform
 {
 public:
@@ -6,3 +11,5 @@ public:
 };
 
 VALIDATE_SIZE(CSimpleTransform, 0x10);
+
+#endif // IVSDK_HEADER_CSIMPLETRANSFORM_H

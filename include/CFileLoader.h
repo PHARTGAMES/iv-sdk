@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CFILELOADER_H
+#define IVSDK_HEADER_CFILELOADER_H
 class CFileLoader
 {
 public:
@@ -49,3 +54,4 @@ public:
 		((void(__cdecl*)(char*))(AddressSetter::Get(0x4D5D70, 0x6CA230)))(pLine);
 	}
 };
+#endif // IVSDK_HEADER_CFILELOADER_H

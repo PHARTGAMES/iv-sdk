@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CCAM_H
+#define IVSDK_HEADER_CCAM_H
 enum eCamType
 {
 	CAM_SKELETON = 0,
@@ -98,3 +103,4 @@ public:
 	float m_fTargetFOV;													// 180-184
 };
 VALIDATE_OFFSET(CCamFollowVehicle, m_fTargetFOV, 0x180);
+#endif // IVSDK_HEADER_CCAM_H

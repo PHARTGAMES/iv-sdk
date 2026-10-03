@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTIMER_H
+#define IVSDK_HEADER_CTIMER_H
 class CTimer
 {
 public:
@@ -18,3 +23,4 @@ public:
 		return ((uint32_t(__cdecl*)())(AddressSetter::Get(0x44370, 0xAD0B0)))();
 	}
 };
+#endif // IVSDK_HEADER_CTIMER_H

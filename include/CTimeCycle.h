@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTIMECYCLE_H
+#define IVSDK_HEADER_CTIMECYCLE_H
 class CTimeCycle
 {
 public:
@@ -12,3 +17,4 @@ public:
 		return ((void(__cdecl*)())(AddressSetter::Get(0x48A650, 0x63AD30)))();
 	}
 };
+#endif // IVSDK_HEADER_CTIMECYCLE_H

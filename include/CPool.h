@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPOOL_H
+#define IVSDK_HEADER_CPOOL_H
 template<typename T>
 class CPool
 {
@@ -78,3 +83,4 @@ template<typename T>
 auto begin(CPool<T>* pool) { return CPool<T>::Iterator(pool, pool->FindNextUsed(0)); }
 template<typename T>
 auto end(CPool<T>* pool) { return CPool<T>::Iterator(pool, -1); }
+#endif // IVSDK_HEADER_CPOOL_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CFRONTEND_H
+#define IVSDK_HEADER_CFRONTEND_H
 class CFrontEnd
 {
 public:
@@ -17,3 +22,4 @@ public:
 		return ((void(__cdecl*)())(AddressSetter::Get(0x1B500, 0x8B520)))();
 	}
 };
+#endif // IVSDK_HEADER_CFRONTEND_H

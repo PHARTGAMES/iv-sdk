@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CBUILDING_H
+#define IVSDK_HEADER_CBUILDING_H
 class CBuilding : public CEntity
 {
 public:
@@ -9,3 +14,5 @@ public:
 };
 
 VALIDATE_SIZE(CBuilding, 0x70);
+
+#endif // IVSDK_HEADER_CBUILDING_H

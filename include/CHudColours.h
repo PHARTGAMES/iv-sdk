@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CHUDCOLOURS_H
+#define IVSDK_HEADER_CHUDCOLOURS_H
 #include "eHudColour.h"
 
 class CHudColours
@@ -5,3 +10,4 @@ class CHudColours
 public:
 	static inline CRGBA* ms_HudColour = (CRGBA*)AddressSetter::Get(0xDE4D40, 0xDE8038); // ms_HudColour[73]
 };
+#endif // IVSDK_HEADER_CHUDCOLOURS_H

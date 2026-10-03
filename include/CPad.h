@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPAD_H
+#define IVSDK_HEADER_CPAD_H
 #include "ePadControls.h"
 
 class CPed;
@@ -53,4 +58,5 @@ VALIDATE_OFFSET(CPad, m_bIsUsingKeyboardForHeli, 0x328D);
 VALIDATE_OFFSET(CPad, m_nLastUpdateTime, 0x3A6C);
 VALIDATE_OFFSET(CPad, m_aValues, 0x2698);
 
-CPad* Pads = (CPad*)AddressSetter::Get(0xCFB818, 0xDD8EA8); // Pads[4]; 0 = player 1, 1 = player 2, 2 = debug, 3 = unknown
+extern CPad* Pads; // Pads[4]; 0 = player 1, 1 = player 2, 2 = debug, 3 = unknown
+#endif // IVSDK_HEADER_CPAD_H

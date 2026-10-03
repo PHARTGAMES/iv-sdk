@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CGAME_H
+#define IVSDK_HEADER_CGAME_H
 class CGame
 {
 public:
@@ -10,3 +15,4 @@ public:
 		return ((bool(__cdecl*)(const char*))(AddressSetter::Get(0x4ADA50, 0x770660)))(sGameDat);
 	}
 };
+#endif // IVSDK_HEADER_CGAME_H

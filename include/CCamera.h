@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CCAMERA_H
+#define IVSDK_HEADER_CCAMERA_H
 class CCamera
 {
 public:
@@ -15,7 +20,8 @@ public:
 		return ((CCam*(__thiscall*)(CCamera*, int, CCam*, CCam*))(AddressSetter::Get(0x51F510, 0x5DF770)))(this, type, unk, unk2);
 	}
 };
-CCamera& TheCamera = AddressSetter::GetRef<CCamera>(0xB21A6C, 0xB488E8);
+extern CCamera& TheCamera;
 
 VALIDATE_OFFSET(CCamera, m_pFinalCam, 0x4);
 VALIDATE_OFFSET(CCamera, m_pGameCam, 0xC);
+#endif // IVSDK_HEADER_CCAMERA_H

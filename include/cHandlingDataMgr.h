@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CHANDLINGDATAMGR_H
+#define IVSDK_HEADER_CHANDLINGDATAMGR_H
 struct tBikeHandlingData
 {
 	uint8_t pad[0x40];
@@ -195,3 +200,4 @@ public:
 		return ((int(__cdecl*)(char*))(AddressSetter::Get(0x571BF0, 0x7A2840)))(handlingName);
 	}
 };
+#endif // IVSDK_HEADER_CHANDLINGDATAMGR_H

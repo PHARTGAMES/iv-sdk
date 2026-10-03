@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CDRAWRADIOHUDTEXTDC_H
+#define IVSDK_HEADER_CDRAWRADIOHUDTEXTDC_H
 // probably more general, todo look into this later
 struct tRadioHudTextPos
 {
@@ -24,3 +29,4 @@ VALIDATE_SIZE(CDrawRadioHudTextDC, 0x30);
 VALIDATE_OFFSET(CDrawRadioHudTextDC, m_vVerts, 0x8);
 VALIDATE_OFFSET(CDrawRadioHudTextDC, m_sSprite, 0x28);
 VALIDATE_OFFSET(CDrawRadioHudTextDC, m_nColor, 0x2C);
+#endif // IVSDK_HEADER_CDRAWRADIOHUDTEXTDC_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_AUDENGINE_H
+#define IVSDK_HEADER_AUDENGINE_H
 class audConfig
 {
 public:
@@ -22,4 +27,5 @@ public:
 	}
 };
 
-audEngine& AudioEngine = AddressSetter::GetRef<audEngine>(0x1316CA0, 0xCF1970);
+extern audEngine& AudioEngine;
+#endif // IVSDK_HEADER_AUDENGINE_H

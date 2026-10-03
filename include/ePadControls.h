@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_EPADCONTROLS_H
+#define IVSDK_HEADER_EPADCONTROLS_H
 enum ePadControls
 {
 	INPUT_NEXT_CAMERA,
@@ -189,3 +194,4 @@ enum ePadControls
 	INPUT_VEH_MOVE_RIGHT_2,
 	NUM_INPUTS
 };
+#endif // IVSDK_HEADER_EPADCONTROLS_H

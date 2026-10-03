@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTASKSIMPLENMHIGHFALL_H
+#define IVSDK_HEADER_CTASKSIMPLENMHIGHFALL_H
 class CTaskSimpleNMHighFall : public CTaskSimple
 {
 public:
@@ -7,3 +12,4 @@ public:
 		((void(__thiscall*)(CTaskSimpleNMHighFall*, uint32_t, uint32_t, uint32_t, uint32_t))(AddressSetter::Get(0x8616F0, 0x7DCC10)))(this, nUnk, nUnk2, nUnk3, nUnk4);
 	}
 };
+#endif // IVSDK_HEADER_CTASKSIMPLENMHIGHFALL_H

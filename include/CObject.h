@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_COBJECT_H
+#define IVSDK_HEADER_COBJECT_H
 class CPhysical;
 
 class CObject : public CPhysical
@@ -9,3 +14,4 @@ public:
 };
 VALIDATE_SIZE(CObject, 0x320);
 VALIDATE_OFFSET(CObject, m_fScale, 0x250);
+#endif // IVSDK_HEADER_COBJECT_H

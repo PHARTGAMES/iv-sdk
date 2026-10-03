@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPOOLS_H
+#define IVSDK_HEADER_CPOOLS_H
 class CPed;
 class CVehicle;
 class CBuilding;
@@ -44,3 +49,4 @@ public:
 	static inline auto& ms_pIplPool = AddressSetter::GetRef<CPool<IplDef>*>(0x128FF98, 0xF6E468);
 	static inline auto& ms_pPedTargettingPool = AddressSetter::GetRef<CPool<CPedTargetting>*>(0x1311134, 0x12859EC);
 };
+#endif // IVSDK_HEADER_CPOOLS_H

@@ -15,6 +15,8 @@ file is licensed as part of the ScriptHook SDK.
 
 #pragma once
 
+#include "../IVSDK.h"
+#include "NativeHashes.h"
 #include "NativeInvoke.h"
 #include "ScriptingTypes.h"
 #include "ScriptingHelpers.h"

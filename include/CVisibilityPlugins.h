@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CVISIBILITYPLUGINS_H
+#define IVSDK_HEADER_CVISIBILITYPLUGINS_H
 class CVisibilityPlugins
 {
 public:
@@ -12,3 +17,4 @@ public:
 
 	static inline char*& sStipplePath = AddressSetter::GetRef<char*>(0x3DB970, 0x55A920); // platform:/textures
 };
+#endif // IVSDK_HEADER_CVISIBILITYPLUGINS_H

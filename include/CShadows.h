@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CSHADOWS_H
+#define IVSDK_HEADER_CSHADOWS_H
 class CShadows
 {
 public:
@@ -14,3 +19,4 @@ public:
 		return ((void(__cdecl*)(uint32_t, uint32_t, uint32_t, CVector*, CVector*, CVector*, CVector*, float, uint32_t, uint32_t, float, float, float, uint32_t, uint32_t, uint32_t))(AddressSetter::Get(0x4C60E0, 0x62E5F0)))(a1, a2, nFlags, pVec1, pVec2, vPos, vColor, fIntensity, texHash, txdSlot, fRange, a12, a13, a14, a15, nID);
 	}
 };
+#endif // IVSDK_HEADER_CSHADOWS_H

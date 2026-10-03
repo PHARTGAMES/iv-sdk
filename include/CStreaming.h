@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CSTREAMING_H
+#define IVSDK_HEADER_CSTREAMING_H
 namespace rage { class fiPackfile; }
 
 class CStreaming
@@ -43,3 +48,4 @@ public:
 		((void(__cdecl*)())(AddressSetter::Get(0x4DA590, 0x56A340)))();
 	}
 };
+#endif // IVSDK_HEADER_CSTREAMING_H

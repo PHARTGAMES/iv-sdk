@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPLAYERINFO_H
+#define IVSDK_HEADER_CPLAYERINFO_H
 class CPed;
 class CVehicle;
 
@@ -71,17 +76,18 @@ VALIDATE_OFFSET(CPlayerInfo, m_nTeam, 0x574);
 VALIDATE_OFFSET(CPlayerInfo, m_pPlayerPed, 0x58C);
 VALIDATE_OFFSET(CPlayerInfo, m_nControlFlags, 0x4BC);
 
-CVector& FindPlayerCentreOfWorld(CVector* v)
+inline CVector& FindPlayerCentreOfWorld(CVector* v)
 {
 	return ((CVector&(__cdecl*)(CVector*))(AddressSetter::Get(0x418100, 0x3CD3F0)))(v);
 }
 
-CPed* FindPlayerPed()
+inline CPed* FindPlayerPed()
 {
 	return ((CPed*(__cdecl*)())(AddressSetter::Get(0x417F40, 0x3CD230)))();
 }
 
-CVehicle* FindPlayerVehicle()
+inline CVehicle* FindPlayerVehicle()
 {
 	return ((CVehicle*(__cdecl*)())(AddressSetter::Get(0x478890, 0x4B52F0)))();
 }
+#endif // IVSDK_HEADER_CPLAYERINFO_H

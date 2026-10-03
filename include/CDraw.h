@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CDRAW_H
+#define IVSDK_HEADER_CDRAW_H
 // this entire thing should be looked into a lot more, right now theres basically only rtti data here
 
 struct tViewportData
@@ -117,4 +122,5 @@ public:
 VALIDATE_OFFSET(CDraw, m_pRenderPhases, 0x38);
 VALIDATE_OFFSET(CDraw, m_bForceHudWidescreen, 0x453);
 
-CDraw& Scene = AddressSetter::GetRef<CDraw>(0xCF47E0, 0xDF8280); // scene? renderer? rw to rage wrapper? some core rage rendering class? just called it CDraw, Scene & GlobalScene for now
+extern CDraw& Scene; // scene? renderer? rw to rage wrapper? some core rage rendering class? just called it CDraw, Scene & GlobalScene for now
+#endif // IVSDK_HEADER_CDRAW_H

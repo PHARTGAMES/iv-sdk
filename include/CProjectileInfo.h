@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPROJECTILEINFO_H
+#define IVSDK_HEADER_CPROJECTILEINFO_H
 class CProjectileInfo
 {
 public:
@@ -11,3 +16,4 @@ public:
 		return ((bool(__cdecl*)(CEntity*, int, CMatrix*, CVector*, CVector*, CEntity*, bool, CObject*))(AddressSetter::Get(0x59DA30, 0x452A90)))(pEntProjOwner, ProjType, pMatrix, vecStart, vecEnd, pTargetEntity, noMPSync, pProjectileObject);
 	}
 };
+#endif // IVSDK_HEADER_CPROJECTILEINFO_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPEDTYPE_H
+#define IVSDK_HEADER_CPEDTYPE_H
 class CPedType
 {
 public:
@@ -14,3 +19,4 @@ public:
 		return ((int(__cdecl*)(char*))(AddressSetter::Get(0x7CB8E0, 0x806DC0)))(type);
 	}
 };
+#endif // IVSDK_HEADER_CPEDTYPE_H

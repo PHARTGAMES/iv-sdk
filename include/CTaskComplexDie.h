@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTASKCOMPLEXDIE_H
+#define IVSDK_HEADER_CTASKCOMPLEXDIE_H
 class CTaskComplexDie : public CTaskComplex
 {
 public:
@@ -6,3 +11,4 @@ public:
 		((void(__thiscall*)(CTaskComplexDie*, uint32_t, uint32_t, uint32_t, uint32_t, float, float, uint32_t))(AddressSetter::Get(0x6BC6C0, 0x818240)))(this, unk, unk2, unk3_44, unk4_190, fBlendDelta, fAnimSpeed, unk5_1);
 	}
 };
+#endif // IVSDK_HEADER_CTASKCOMPLEXDIE_H

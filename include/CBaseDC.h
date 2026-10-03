@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CBASEDC_H
+#define IVSDK_HEADER_CBASEDC_H
 class CBaseDC
 {
 public:
@@ -13,3 +18,4 @@ public:
 	}
 };
 VALIDATE_SIZE(CBaseDC, 0x8);
+#endif // IVSDK_HEADER_CBASEDC_H

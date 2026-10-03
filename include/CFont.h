@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CFONT_H
+#define IVSDK_HEADER_CFONT_H
 class CFont
 {
 public:
@@ -14,3 +19,4 @@ public:
 		((void(__cdecl*)(uint8_t, uint8_t, uint8_t, uint8_t))(AddressSetter::Get(0x7B3F60, 0x757880)))(r, g, b, a);
 	}
 };
+#endif // IVSDK_HEADER_CFONT_H

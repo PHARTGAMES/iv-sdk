@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CAERADIOTRACKMANAGER_H
+#define IVSDK_HEADER_CAERADIOTRACKMANAGER_H
 class CRadioStation
 {
 public:
@@ -37,3 +42,4 @@ public:
 		return ((CRadioStation*(__cdecl*)(uint32_t))(AddressSetter::Get(0x6C4C60, 0x3D6DD0)))(hash);
 	}
 };
+#endif // IVSDK_HEADER_CAERADIOTRACKMANAGER_H

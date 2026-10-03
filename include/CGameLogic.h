@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CGAMELOGIC_H
+#define IVSDK_HEADER_CGAMELOGIC_H
 class CGameLogic
 {
 public:
@@ -17,3 +22,4 @@ public:
 		((void(__cdecl*)(CPed*, CVector, float))(AddressSetter::Get(0x3B7B40, 0x3D46F0)))(pPlayerPed, NewCoors, NewHeading);
 	}
 };
+#endif // IVSDK_HEADER_CGAMELOGIC_H

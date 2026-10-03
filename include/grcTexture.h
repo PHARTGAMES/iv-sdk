@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_GRCTEXTURE_H
+#define IVSDK_HEADER_GRCTEXTURE_H
 namespace rage
 {
 	class grcTexture
@@ -20,3 +25,4 @@ namespace rage
 	};
 	VALIDATE_SIZE(grcTexturePC, 0x50);
 }
+#endif // IVSDK_HEADER_GRCTEXTURE_H

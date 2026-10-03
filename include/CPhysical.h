@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CPHYSICAL_H
+#define IVSDK_HEADER_CPHYSICAL_H
 namespace rage { class phConstrainedCollider; }
 
 class CPhysical : public CDynamicEntity
@@ -75,3 +80,5 @@ VALIDATE_OFFSET(CPhysical, m_qAttachOffset, 0x1D0);
 VALIDATE_OFFSET(CPhysical, m_pEntityIgnoredCollision, 0x1F8);
 VALIDATE_OFFSET(CPhysical, m_fPercentSubmerged, 0x120);
 VALIDATE_OFFSET(CPhysical, m_nSubmergedState, 0x144);
+
+#endif // IVSDK_HEADER_CPHYSICAL_H

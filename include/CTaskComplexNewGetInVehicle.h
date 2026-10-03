@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTASKCOMPLEXNEWGETINVEHICLE_H
+#define IVSDK_HEADER_CTASKCOMPLEXNEWGETINVEHICLE_H
 enum eNewGetInVehicleType
 {
 	GET_IN_NETWORK = -5, // get into the passenger seat if the driver is friendly
@@ -13,3 +18,4 @@ public:
 		((void(__thiscall*)(CTaskComplexNewGetInVehicle*, CVehicle*, int32_t, uint32_t, int32_t, float))(AddressSetter::Get(0x62BCF0, 0x86DFD0)))(this, veh, getInType, unk27, unk, fUnk);
 	}
 };
+#endif // IVSDK_HEADER_CTASKCOMPLEXNEWGETINVEHICLE_H

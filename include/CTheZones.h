@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTHEZONES_H
+#define IVSDK_HEADER_CTHEZONES_H
 class CZone
 {
 public:
@@ -37,3 +42,4 @@ public:
 		return ((int(__cdecl*)())(AddressSetter::Get(0x48BF90, 0x64AB10)))();
 	}
 };
+#endif // IVSDK_HEADER_CTHEZONES_H

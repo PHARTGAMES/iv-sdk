@@ -1,3 +1,4 @@
+#pragma once
 enum eNativeHash
 {
 	NATIVE_ABORT_ALL_GARAGE_ACTIVITY = 0x5DB95843,

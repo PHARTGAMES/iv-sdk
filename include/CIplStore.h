@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CIPLSTORE_H
+#define IVSDK_HEADER_CIPLSTORE_H
 struct IplDef
 {
 	uint8_t pad[0x60];				// 00-60
@@ -20,15 +25,16 @@ public:
 	}
 };
 
-bool& gbIplsNeededAtPosn = AddressSetter::GetRef<bool>(0x128FFA0, 0xF6E470);
-CVector& gvecIplsNeededAtPosn = AddressSetter::GetRef<CVector>(0xB3BE50, 0xB49190);
+extern bool& gbIplsNeededAtPosn;
+extern CVector& gvecIplsNeededAtPosn;
 
-void SetIfIplIsRequired(CVector2D* pos, IplDef* def)
+inline void SetIfIplIsRequired(CVector2D* pos, IplDef* def)
 {
 	((void(__cdecl*)(CVector2D*, IplDef*))(AddressSetter::Get(0x726520, 0x60AD50)))(pos, def);
 }
 
-void SetIfIplIsRequiredReducedBB(CVector2D* pos, IplDef* def)
+inline void SetIfIplIsRequiredReducedBB(CVector2D* pos, IplDef* def)
 {
 	((void(__cdecl*)(CVector2D*, IplDef*))(AddressSetter::Get(0x726560, 0x60AE00)))(pos, def);
 }
+#endif // IVSDK_HEADER_CIPLSTORE_H

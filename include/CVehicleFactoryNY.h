@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CVEHICLEFACTORYNY_H
+#define IVSDK_HEADER_CVEHICLEFACTORYNY_H
 class CVehicleFactory
 {
 public:
@@ -14,4 +19,5 @@ public:
 	}
 };
 
-CVehicleFactoryNY*& VehicleFactory = AddressSetter::GetRef<CVehicleFactoryNY*>(0x11F5514, 0xE52DE8);
+extern CVehicleFactoryNY*& VehicleFactory;
+#endif // IVSDK_HEADER_CVEHICLEFACTORYNY_H

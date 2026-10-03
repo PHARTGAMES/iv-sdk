@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CRENDERPHASE_H
+#define IVSDK_HEADER_CRENDERPHASE_H
 // todo
 
 // +0x24 off vftable might be type
@@ -22,3 +27,4 @@ class CRenderPhaseDeferredLighting_LightsToScreen;
 class CRenderPhaseDrawScene;
 class CRenderPhasePostRenderViewport;
 class CRenderPhaseRadar;
+#endif // IVSDK_HEADER_CRENDERPHASE_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CEXPLOSION_H
+#define IVSDK_HEADER_CEXPLOSION_H
 struct tExplosionInfo
 {
 	float m_fDamageAtCentre;						// 00-04
@@ -36,3 +41,4 @@ class CExplosion
 public:
 	static inline tExplosionInfo* ms_ExplosionInfo = (tExplosionInfo*)AddressSetter::Get(0x11C0778, 0xEFD0B8); // ms_ExplosionInfo[25]
 };
+#endif // IVSDK_HEADER_CEXPLOSION_H

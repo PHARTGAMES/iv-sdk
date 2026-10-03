@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CRESTART_H
+#define IVSDK_HEADER_CRESTART_H
 class CRestart
 {
 public:
@@ -46,3 +51,4 @@ public:
 		return ((int(__cdecl*)())(AddressSetter::Get(0x4E5F00, 0x5BBC90)))();
 	}
 };
+#endif // IVSDK_HEADER_CRESTART_H

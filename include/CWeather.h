@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CWEATHER_H
+#define IVSDK_HEADER_CWEATHER_H
 class CWeather
 {
 public:
@@ -13,3 +18,4 @@ public:
 		return ((void(__cdecl*)(int))(AddressSetter::Get(0x5E41D0, 0x5A0910)))(Type);
 	}
 };
+#endif // IVSDK_HEADER_CWEATHER_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CMATRIX_H
+#define IVSDK_HEADER_CMATRIX_H
 #include <cmath>
 
 class CMatrix
@@ -277,3 +282,4 @@ inline CQuaternion MatrixToQuaternion(const CMatrix& m)
 
     return q;
 }
+#endif // IVSDK_HEADER_CMATRIX_H

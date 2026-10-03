@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CGANGS_H
+#define IVSDK_HEADER_CGANGS_H
 class CGangInfo
 {
 public:
@@ -27,3 +32,4 @@ public:
 		return ((int(__cdecl*)())(AddressSetter::Get(0x48EC80, 0x7EB6F0)))();
 	}
 };
+#endif // IVSDK_HEADER_CGANGS_H

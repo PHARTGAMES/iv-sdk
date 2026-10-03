@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CENTITY_H
+#define IVSDK_HEADER_CENTITY_H
 class CNetworkObject;
 class phInstGta;
 class CPhysical;
@@ -59,3 +64,4 @@ VALIDATE_OFFSET(CEntity, m_fDrawDistance, 0x50);
 VALIDATE_OFFSET(CEntity, m_nEntityFlags, 0x24);
 VALIDATE_OFFSET(CEntity, m_pMatrix, 0x20);
 VALIDATE_OFFSET(CEntity, m_pInstGta, 0x38);
+#endif // IVSDK_HEADER_CENTITY_H

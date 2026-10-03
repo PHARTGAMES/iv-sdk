@@ -1,3 +1,5 @@
+#pragma once
+#include "../IVSDK.h"
 // native calling code by aru, slightly modified to fit
 
 class IVNativeCallContext

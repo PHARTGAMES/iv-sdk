@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CANIMMANAGER_H
+#define IVSDK_HEADER_CANIMMANAGER_H
 class CAnimManager
 {
 public:
@@ -30,3 +35,5 @@ public:
 		return ((void(__stdcall*)(int, const char*, const char*, uint32_t, const char**, AnimDescriptor*, int, int, int, bool))(AddressSetter::Get(0x530F70, 0x78DE00)))(id, pName, pFile, numAnims, pAnimNames, pAnimDescs, unk1, unk2, unk3, unk4);
 	}
 };
+
+#endif // IVSDK_HEADER_CANIMMANAGER_H

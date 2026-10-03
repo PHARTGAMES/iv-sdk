@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_PHCONSTRAINEDCOLLIDER_H
+#define IVSDK_HEADER_PHCONSTRAINEDCOLLIDER_H
 namespace rage
 {
 	class phSleep
@@ -63,3 +68,4 @@ namespace rage
 	VALIDATE_OFFSET(phConstrainedCollider, m_vUnk4, 0x120);
 	VALIDATE_OFFSET(phConstrainedCollider, m_pUnkParameters, 0x2A0);
 }
+#endif // IVSDK_HEADER_PHCONSTRAINEDCOLLIDER_H

@@ -1,20 +1,6 @@
-#define VALIDATE_SIZE(struc, size) static_assert(sizeof(struc) == size, "Invalid structure size of " #struc)
-#define VALIDATE_OFFSET(struc, member, offset) \
-	static_assert(offsetof(struc, member) == offset, "The offset of " #member " in " #struc " is not " #offset "...")
-
-namespace plugin
-{
-	enum eGameVersion
-	{
-		VERSION_NONE,
-		VERSION_1070,
-		VERSION_1080,
-	};
-	eGameVersion gameVer = VERSION_NONE;
-	void gameStartupEvent();
-	void gameShutdownEvent();
-}
-
+#pragma once
+#include "IVSDKCore.h"
+#define IVSDK_BUILDING_UMBRELLA
 #include "NewAddressSet.h"
 #include "CRGBA.h"
 #include "rage.h"
@@ -125,3 +111,4 @@ namespace plugin
 #include "CStuntJumpManager.h"
 #include "CAERadioTrackManager.h"
 #include "CFrontEnd.h"
+#undef IVSDK_BUILDING_UMBRELLA

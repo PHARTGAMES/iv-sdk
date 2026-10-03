@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CAUDIOZONES_H
+#define IVSDK_HEADER_CAUDIOZONES_H
 class CAudioZones
 {
 public:
@@ -13,4 +18,5 @@ public:
 		((void(__cdecl*)(bool, CVector))(AddressSetter::Get(0x73CDB0, 0x5B1F90)))(bForceUpdate, TestCoors);
 	}
 };
-auto& LastUpdateCoors = AddressSetter::GetRef<CVector>(0x12932B0, 0xF59B00);
+extern CVector& LastUpdateCoors;
+#endif // IVSDK_HEADER_CAUDIOZONES_H

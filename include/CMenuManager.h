@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CMENUMANAGER_H
+#define IVSDK_HEADER_CMENUMANAGER_H
 struct tControlRemapInfo
 {
 	uint8_t m_nControlId;					// 00-01 see ePadControls
@@ -40,3 +45,4 @@ public:
 
 	static inline tControlRemapInfo* m_aRemapOptions = (tControlRemapInfo*)AddressSetter::Get(0xB1547A, 0xB4DF8A);
 };
+#endif // IVSDK_HEADER_CMENUMANAGER_H

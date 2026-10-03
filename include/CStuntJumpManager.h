@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CSTUNTJUMPMANAGER_H
+#define IVSDK_HEADER_CSTUNTJUMPMANAGER_H
 class CBoundBox
 {
 public:
@@ -39,3 +44,4 @@ public:
 		return ((int(__cdecl*)())(AddressSetter::Get(0x56D1D0, 0x8C4340)))();
 	}
 };
+#endif // IVSDK_HEADER_CSTUNTJUMPMANAGER_H

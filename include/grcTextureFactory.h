@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_GRCTEXTUREFACTORY_H
+#define IVSDK_HEADER_GRCTEXTUREFACTORY_H
 namespace rage
 {
 	class grcTextureFactory
@@ -17,5 +22,6 @@ namespace rage
 	};
 	VALIDATE_SIZE(grcTextureFactoryPC, 0x70);
 
-	grcTextureFactoryPC*& TextureFactory = AddressSetter::GetRef<grcTextureFactoryPC*>(0x14A8630, 0x14CAD4C);
+	extern grcTextureFactoryPC*& TextureFactory;
 }
+#endif // IVSDK_HEADER_GRCTEXTUREFACTORY_H

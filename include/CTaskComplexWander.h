@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTASKCOMPLEXWANDER_H
+#define IVSDK_HEADER_CTASKCOMPLEXWANDER_H
 class CTaskComplexWander : public CTaskComplex
 {
 public:
@@ -20,3 +25,4 @@ public:
 		this->m_fUnk = 0;
 	}
 };
+#endif // IVSDK_HEADER_CTASKCOMPLEXWANDER_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_PHINSTGTA_H
+#define IVSDK_HEADER_PHINSTGTA_H
 namespace rage { class grmShaderGroup; }
 
 class phArchetypeGta
@@ -103,3 +108,4 @@ public:																	// 00-50
 };
 VALIDATE_OFFSET(phInstGta, m_pFragType, 0x6C);
 VALIDATE_OFFSET(phInstGta, m_pUnkImportant, 0x5C);
+#endif // IVSDK_HEADER_PHINSTGTA_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_FIPACKFILE_H
+#define IVSDK_HEADER_FIPACKFILE_H
 namespace rage
 {
 	class fiPackfile
@@ -22,3 +27,4 @@ namespace rage
 	};
 	VALIDATE_SIZE(fiPackfile, 0x478);
 }
+#endif // IVSDK_HEADER_FIPACKFILE_H

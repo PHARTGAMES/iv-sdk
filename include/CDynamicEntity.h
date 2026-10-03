@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CDYNAMICENTITY_H
+#define IVSDK_HEADER_CDYNAMICENTITY_H
 class CDynamicEntity : public CEntity
 {
 public:
@@ -20,3 +25,5 @@ public:
 
 VALIDATE_SIZE(CDynamicEntity, 0x110);
 VALIDATE_OFFSET(CDynamicEntity, m_pAnim, 0x78);
+
+#endif // IVSDK_HEADER_CDYNAMICENTITY_H

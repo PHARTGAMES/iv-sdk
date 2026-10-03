@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CMODELINFO_H
+#define IVSDK_HEADER_CMODELINFO_H
 #include "eVehiclePart.h"
 
 class phArchetypeGta;
@@ -194,3 +199,4 @@ public:
 		return ((void(__cdecl*)())(AddressSetter::Get(0x58AFF0, 0x4DD7B0)))();
 	}
 };
+#endif // IVSDK_HEADER_CMODELINFO_H

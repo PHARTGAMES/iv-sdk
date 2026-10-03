@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTHESCRIPTS_H
+#define IVSDK_HEADER_CTHESCRIPTS_H
 struct building_swap_struct
 {
 	CBuilding* pBuilding;
@@ -59,3 +64,4 @@ public:
 		return ((void(__cdecl*)())(AddressSetter::Get(0x409AF0, 0x4B40F0)))();
 	}
 };
+#endif // IVSDK_HEADER_CTHESCRIPTS_H

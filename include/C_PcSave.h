@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_C_PCSAVE_H
+#define IVSDK_HEADER_C_PCSAVE_H
 class C_PcSave
 {
 public:
@@ -12,3 +17,4 @@ public:
 		return ((int(__cdecl*)(int32_t))(AddressSetter::Get(0x42E130, 0x4595F0)))(SlotNum);
 	}
 };
+#endif // IVSDK_HEADER_C_PCSAVE_H

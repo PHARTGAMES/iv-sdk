@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTASKCOMPLEXMOBILEMAKECALL_H
+#define IVSDK_HEADER_CTASKCOMPLEXMOBILEMAKECALL_H
 class CTaskComplexMobileMakeCall : public CTaskComplex
 {
 public:
@@ -6,3 +11,4 @@ public:
 		((void(__thiscall*)(CTaskComplexMobileMakeCall*, char*, bool, bool))(AddressSetter::Get(0x4F5E00, 0x7AF830)))(this, speechLine, bUnk_1, bUnk2);
 	}
 };
+#endif // IVSDK_HEADER_CTASKCOMPLEXMOBILEMAKECALL_H

@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CTXDSTORE_H
+#define IVSDK_HEADER_CTXDSTORE_H
 struct TxdDef
 {
 	rage::pgDictionary<rage::grcTexturePC>* m_pDictionary;		// 00-04
@@ -52,3 +57,4 @@ public:
 		return ((CSprite2d(__stdcall*)(char*))(AddressSetter::Get(0x21DA10, 0xD300)))(sName);
 	}
 };
+#endif // IVSDK_HEADER_CTXDSTORE_H

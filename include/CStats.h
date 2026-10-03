@@ -1,3 +1,8 @@
+#ifndef IVSDK_BUILDING_UMBRELLA
+#include "IVSDK.h"
+#endif
+#ifndef IVSDK_HEADER_CSTATS_H
+#define IVSDK_HEADER_CSTATS_H
 class CStats
 {
 public:
@@ -12,3 +17,4 @@ public:
 		((void(__cdecl*)(uint16_t, float))(AddressSetter::Get(0x563D00, 0x4D8330)))(index, NewValue);
 	}
 };
+#endif // IVSDK_HEADER_CSTATS_H

@@ -164,6 +164,7 @@ inline CVector Lerp(const CVector& a, const CVector& b, float t)
     );
 }
 
+
 inline float SignedAngle(const CVector& a, const CVector& b, const CVector& axis)
 {
     // Normalize inputs
@@ -172,7 +173,7 @@ inline float SignedAngle(const CVector& a, const CVector& b, const CVector& axis
 
     // Dot gives cosine of angle
     float dot = an.Dot(bn);
-    dot = std::fmax(-1.0f, std::fmin(1.0f, dot)); // clamp for safety
+    dot = max(-1.0f, min(1.0f, dot)); // clamp for safety
 
     float angle = acosf(dot);
 

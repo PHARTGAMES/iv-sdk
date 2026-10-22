@@ -34,6 +34,17 @@ public:
 		return ((void*(__thiscall*)(CPool*))(AddressSetter::Get(0x39CB0, 0x9F3A0)))(this);
 	}
 
+	// handle conversion helpers
+	uint32_t GetHandle(T* pObject)
+	{
+		return pObject ? GetIndex(pObject) : 0;
+	}
+
+	T* GetFromHandle(uint32_t nHandle)
+	{
+		return GetAt(nHandle);
+	}
+
 	// helper functions
 	bool IsValid(int slot)
 	{

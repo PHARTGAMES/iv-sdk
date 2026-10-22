@@ -65,6 +65,11 @@ public:
         return *this;
     }
 
+    CVector operator/(float scalar)
+    {
+        return CVector(x / scalar, y / scalar, z / scalar);
+    }
+
     // Normalize in place
     void Normalize()
     {

@@ -266,6 +266,7 @@
     <ClInclude Include="..\include\Hooks.h" />
     <ClInclude Include="..\include\IVSDK.h" />
     <ClInclude Include="..\include\IVSDKCore.h" />
+    <ClInclude Include="..\include\IVSDKMath.h" />
     <ClInclude Include="..\include\NewAddressSet.h" />
     <ClInclude Include="..\include\pgDictionary.h" />
     <ClInclude Include="..\include\phBound.h" />

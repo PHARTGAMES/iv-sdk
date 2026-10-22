@@ -28,6 +28,16 @@ class CPedTargetting;
 class CPools
 {
 public:
+	static uint32_t GetObjectHandle(CObject* pObject)
+	{
+		return ms_pObjectPool ? ms_pObjectPool->GetHandle(pObject) : 0;
+	}
+
+	static CObject* GetObjectFromHandle(uint32_t nHandle)
+	{
+		return ms_pObjectPool ? ms_pObjectPool->GetFromHandle(nHandle) : nullptr;
+	}
+
 	static inline auto& ms_pPedPool = AddressSetter::GetRef<CPool<CPed>*>(0x14A82AC, 0x14CB03C);
 	static inline auto& ms_pVehiclePool = AddressSetter::GetRef<CPool<CVehicle>*>(0x1219240, 0xE52CD0);
 	static inline auto& ms_pBuildingPool = AddressSetter::GetRef<CPool<CBuilding>*>(0x128FED0, 0xE4A5E8);

@@ -69,12 +69,42 @@ public:
 		((void(__cdecl*)())(AddressSetter::Get(0x419750, 0x3CEC20)))();
 	}
 
-	static bool ProcessLineOfSight(CVector* source, CVector* target, uint32_t* pUnk, tLineOfSightResults* pResults, uint32_t nFlags, uint32_t nUnk1, uint32_t nUnk2, uint32_t nSeeThroughShootThrough, uint32_t nUnk4)
+	//static bool ProcessLineOfSight(CVector* source, CVector* target, uint32_t* pUnk, tLineOfSightResults* pResults, uint32_t nFlags, uint32_t nUnk1, uint32_t nUnk2, uint32_t nSeeThroughShootThrough, uint32_t nUnk4)
+	//{
+	//	// zmenu uses CWorld::ProcessLineOfSight(v, v2, 0, &ret, 142, 1, 0, 2, 4)
+	//	// see/shoot 1 -> do see through check
+	//	// see/shoot 2 -> do shoot through check
+	//	return ((uint32_t(__cdecl*)(CVector*, CVector*, uint32_t*, tLineOfSightResults*, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t))(AddressSetter::Get(0x596D80, 0x52A400)))(source, target, pUnk, pResults, nFlags, nUnk1, nUnk2, nSeeThroughShootThrough, nUnk4);
+	//}
+
+	static bool ProcessLineOfSight(CVector* source, CVector* target, uint32_t* pUnk, tLineOfSightResults* pResults, uint32_t nCollisionFlags, bool bIgnoreEntity, bool bUnk2, uint32_t nSeeThroughShootThrough, uint32_t nUnk4)
 	{
-		// zmenu uses CWorld::ProcessLineOfSight(v, v2, 0, &ret, 142, 1, 0, 2, 4)
-		// see/shoot 1 -> do see through check
-		// see/shoot 2 -> do shoot through check
-		return ((uint32_t(__cdecl*)(CVector*, CVector*, uint32_t*, tLineOfSightResults*, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t))(AddressSetter::Get(0x596D80, 0x52A400)))(source, target, pUnk, pResults, nFlags, nUnk1, nUnk2, nSeeThroughShootThrough, nUnk4);
+		// Collision flags:
+		// 0x02 = Static geometry
+		// 0x04 = Buildings
+		// 0x08 = Vehicles
+		// 0x20 = Peds A
+		// 0x40 = Peds B
+		// 0x80 = Objects
+		//
+		// See/shoot through:
+		// 1 = See-through check
+		// 2 = Shoot-through check
+		//
+		// Known usage: ProcessLineOfSight(v, v2, nullptr, &ret, 142, 1, 0, 2, 4)
+
+		using ProcessLineOfSightFn = uint32_t(__cdecl*)(
+			CVector*, CVector*, uint32_t*, tLineOfSightResults*,
+			uint32_t, uint32_t, uint32_t, uint32_t, uint32_t);
+
+		return reinterpret_cast<ProcessLineOfSightFn>(
+			AddressSetter::Get(0x596D80, 0x52A400))(
+				source, target, pUnk, pResults,
+				nCollisionFlags,
+				static_cast<uint32_t>(bIgnoreEntity),
+				static_cast<uint32_t>(bUnk2),
+				nSeeThroughShootThrough,
+				nUnk4) != 0;
 	}
 };
 #endif // IVSDK_HEADER_CWORLD_H

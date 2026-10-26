@@ -119,6 +119,17 @@ inline CMatrix BuildCameraOffset(float yawDeg, float pitchDeg)
     return m;
 }
 
+inline CVector CameraMatrixToAngles(const CMatrix& a_matrix)
+{
+    const float RadToDeg = 180.0f / 3.14159265358979323846f;
+
+    const CVector& forward = a_matrix.at;
+
+    float pitch = atan2f(forward.z, sqrtf(forward.x * forward.x + forward.y * forward.y)) * RadToDeg;
+    float yaw = atan2f(forward.x, forward.y) * RadToDeg;
+
+    return CVector(pitch, 0.0f, yaw);
+}
 
 inline CMatrix BuildRotationFromAxisAngle(const CVector& axis, float angleDeg)
 {
@@ -282,4 +293,35 @@ inline CQuaternion MatrixToQuaternion(const CMatrix& m)
 
     return q;
 }
+
+inline CMatrix LerpMatrix(const CMatrix& a_from, const CMatrix& a_to, float a_alpha)
+{
+    a_alpha = min(max(a_alpha, 0.0f), 1.0f);
+
+    CMatrix result = a_from;
+
+    // Interpolate position
+    result.pos = CVector_pad(
+        a_from.pos.x + (a_to.pos.x - a_from.pos.x) * a_alpha,
+        a_from.pos.y + (a_to.pos.y - a_from.pos.y) * a_alpha,
+        a_from.pos.z + (a_to.pos.z - a_from.pos.z) * a_alpha,
+        1.0f);
+
+    // Interpolate forward and up vectors
+    CVector forward = Lerp(CVector(a_from.at), CVector(a_to.at), a_alpha);
+    CVector up = Lerp(CVector(a_from.up), CVector(a_to.up), a_alpha);
+
+    // Rebuild an orthonormal basis
+    forward.Normalize();
+
+    CVector right = Normalize(Cross(forward, up));
+    up = Normalize(Cross(right, forward));
+
+    result.right = CVector_pad(right);
+    result.at = CVector_pad(forward);
+    result.up = CVector_pad(up);
+
+    return result;
+}
+
 #endif // IVSDK_HEADER_CMATRIX_H

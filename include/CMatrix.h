@@ -181,39 +181,16 @@ inline CMatrix BuildRotationFromAxisAngle(const CVector& axis, float angleDeg)
 
 inline CMatrix BuildMatrixFromAngles(const CVector& anglesDeg)
 {
-    // GTA IV convention: x = pitch, y = roll, z = yaw
-    float pitch = DegToRad(anglesDeg.x); // around right (X)
-    float roll = DegToRad(anglesDeg.y); // around at (Y)
-    float yaw = DegToRad(anglesDeg.z); // around up (Z)
+    CMatrix pitch = BuildRotationFromAxisAngle(
+        CVector(1.0f, 0.0f, 0.0f), anglesDeg.x);
 
-    float sp = sinf(pitch), cp = cosf(pitch);
-    float sr = sinf(roll), cr = cosf(roll);
-    float sy = sinf(yaw), cy = cosf(yaw);
+    CMatrix roll = BuildRotationFromAxisAngle(
+        CVector(0.0f, 1.0f, 0.0f), anglesDeg.y);
 
-    CMatrix m;
+    CMatrix yaw = BuildRotationFromAxisAngle(
+        CVector(0.0f, 0.0f, 1.0f), anglesDeg.z);
 
-    // Basis vectors in GTA IV layout (right, at, up)
-    m.right = ToPadded(CVector(
-        cp * cy,
-        cp * sy,
-        sp
-    ));
-
-    m.at = ToPadded(CVector(
-        sr * sp * cy - cr * sy,
-        sr * sp * sy + cr * cy,
-        -sr * cp
-    ));
-
-    m.up = ToPadded(CVector(
-        -(cr * sp * cy + sr * sy),
-        -(cr * sp * sy - sr * cy),
-        cr * cp
-    ));
-
-    m.pos = ToPadded(CVector(0, 0, 0));
-
-    return m;
+    return MultiplyMatrix(MultiplyMatrix(yaw, roll), pitch);
 }
 
 inline CVector ExtractEulerAngles(const CMatrix& m)
